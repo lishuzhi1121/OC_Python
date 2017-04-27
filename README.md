@@ -1,14 +1,12 @@
 # 人生苦短之Objective-C与Python交互简介
 
-<center> ![share_python](http://onmw6wg88.bkt.clouddn.com/share_python.png)
- </center>
+![share_python](http://onmw6wg88.bkt.clouddn.com/share_python.png)
 
 ## 写在前面
 
 随着编程界语言的飞速发展，Python已占据编程语言排行榜单的第5名，并且近几年来更是愈发火热，不管是做运维、网络爬虫，还是服务端开发，Python似乎越来越被开发者所青睐，更是有**“人生苦短，我用Python。”**之说，由此，Python的重要性还是显而易见的。
 
-<center> ![share_sort](http://onmw6wg88.bkt.clouddn.com/share_sort.png)
- </center>
+![share_sort](http://onmw6wg88.bkt.clouddn.com/share_sort.png)
 
 ## 1. Python 简介
 
@@ -572,7 +570,7 @@ print counter.__secretCount  # 报错，实例不能访问私有变量
 
 为了能够更好的管理项目，同时，采用面向对象的思维方式，我们新建一个继承自NSObject的类，专门负责做与 Python 交互相关的事情。那么有了这么一个类就能够与 Python 联系上了，但是为了我们金字塔顶层调用的方便，我们选择创建一个管理类来管理这个负责与 Python 交互的类。当然，这里的两个类都是采用单例模式的设计，创建完成后项目结构如下图：
 
-<center> ![share_class](http://onmw6wg88.bkt.clouddn.com/share_class.png) </center>
+![share_class](http://onmw6wg88.bkt.clouddn.com/share_class.png)
 
 ### 3.2 通过 OC 初始化 Python
 
