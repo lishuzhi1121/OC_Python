@@ -41,11 +41,11 @@
 /**
  OC 调用 Python 输出字符串
 
- @param str 参数
+ @param args 参数数组
  */
-- (void)pythonLog:(NSString *)str
+- (void)pythonLog:(NSArray<NSString *> *)args
 {
-    [self _operationWithFunctionKey:@"oc_PythonLogButtonClick" params:str];
+    [self _operationWithFunctionKey:@"oc_PythonLogButtonClick" params:args];
 }
 
 /**
@@ -79,10 +79,10 @@
  与 Python 模块交互方法
 
  @param funcKey 调用Python中的函数名
- @param params 函数参数信息
+ @param params 函数参数数组(当前配置为数组中只能有3个元素)
  @return 返回值Json
  */
-- (id)_operationWithFunctionKey:(NSString *)funcKey params:(NSString *)params
+- (id)_operationWithFunctionKey:(NSString *)funcKey params:(NSArray<NSString *> *)params
 {
     NSString *result = [[PythonModule sharedInstance] pyCallWithFunctionKey:funcKey Args:params];
     

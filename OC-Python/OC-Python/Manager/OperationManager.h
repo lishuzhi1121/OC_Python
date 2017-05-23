@@ -28,9 +28,9 @@
 /**
  OC 调用 Python 输出字符串
  
- @param str 参数
+ @param args 参数数组
  */
-- (void)pythonLog:(NSString *)str;
+- (void)pythonLog:(NSArray<NSString *> *)args;
 
 /**
  OC 调用 Python 写文件

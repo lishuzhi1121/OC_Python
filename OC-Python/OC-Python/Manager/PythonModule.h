@@ -29,9 +29,9 @@
  OC 调用 Python
  
  @param funcKey 函数名称
- @param args 函数参数
+ @param args 函数参数数组(当前配置为数组中只能有3个元素)
  @return 返回值
  */
-- (NSString *)pyCallWithFunctionKey:(NSString *)funcKey Args:(NSString *)args;
+- (NSString *)pyCallWithFunctionKey:(NSString *)funcKey Args:(NSArray<NSString *> *)args;
 
 @end

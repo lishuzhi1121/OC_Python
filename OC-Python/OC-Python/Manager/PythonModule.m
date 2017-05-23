@@ -186,15 +186,14 @@ static PyObject *myAlert(PyObject *self, PyObject *args)
     return Py_None;
 }
 
-
 /**
  OC 调用 Python
 
  @param funcKey 函数名称
- @param args 函数参数
+ @param args 函数参数数组(当前配置为数组中只能有3个元素)
  @return 返回值
  */
-- (NSString *)pyCallWithFunctionKey:(NSString *)funcKey Args:(NSString *)args
+- (NSString *)pyCallWithFunctionKey:(NSString *)funcKey Args:(NSArray<NSString *> *)args
 {
     PyObject *pName, *pModule, *pFunc, *pValue = NULL, *pResult=NULL;
     //初始化Python解释器
@@ -215,9 +214,17 @@ static PyObject *myAlert(PyObject *self, PyObject *args)
     //判断能否被执行
     if (PyCallable_Check(pFunc))
     {
-        if (args.length > 0) {
+        if (args.count > 0) {
+            NSUInteger argc = args.count;
+            NSMutableString *mStr = [NSMutableString stringWithCapacity:3];
+            for (int i = 0; i < argc; i++)
+            {
+                [mStr appendString:@"z"];
+            }
+            NSLog(@"---> mStr: %@", mStr);
+            
             //设置函数参数
-            pValue = Py_BuildValue("(z)", [args UTF8String]);
+            pValue = Py_BuildValue([mStr UTF8String], [args.firstObject UTF8String], [args[1] UTF8String], [args[2] UTF8String]);
             PyErr_Print();
             
             //调用函数

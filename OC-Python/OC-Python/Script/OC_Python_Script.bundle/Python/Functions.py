@@ -38,7 +38,7 @@ class Functions(Singleton):
 			return False
 
 	# Log
-	def oc_PythonLog(self, data):
+	def oc_PythonLog(self, *data):
 		print(data)
 		return json.dumps({"success":"yes", "msg":str(data)})
 
@@ -66,9 +66,11 @@ class Functions(Singleton):
 
 		
 # OC调用Python打印
-def oc_PythonLogButtonClick(data):
+# 函数参数前加*号表示可变长参数
+def oc_PythonLogButtonClick(*data):
+	print data
 	funcs = Functions()
-	return funcs.oc_PythonLog(data)
+	return funcs.oc_PythonLog(data[0], data[1])
 
 # OC调用Python写文件
 def oc_PythonWriteFileButtonClick():

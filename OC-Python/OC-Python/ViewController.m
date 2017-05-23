@@ -31,7 +31,7 @@ static NSString *const currentPath = @"/Users/lishuzhi/Desktop";
 
 - (IBAction)pythonLogButtonClick:(NSButton *)sender
 {
-    [[OperationManager sharedManager] pythonLog:@"中文打印测试"];
+    [[OperationManager sharedManager] pythonLog:@[@"Hello", @"World", @"!"]];
 }
 
 - (IBAction)pythonWirteFileButtonClick:(NSButton *)sender
