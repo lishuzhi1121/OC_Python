@@ -77,7 +77,7 @@ static PyObject *myAlert(PyObject *self, PyObject *args);
     initoc_python_module();
     
     //导入引用模块
-    PyImport_ImportModule("Functions");
+    PyImport_ImportModule("PBXProjectHelper");
     
     NSBundle *scriptBundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"OC_Python_Script" ofType:@"bundle"]];
     //Main.py 文件路径
@@ -203,7 +203,7 @@ static PyObject *myAlert(PyObject *self, PyObject *args)
     initoc_python_module();
     
     //获取内置在Python的名称对象
-    pName = PyString_FromString((char *)"Functions");
+    pName = PyString_FromString((char *)"PBXProjectHelper");
     
     //加载模块对象
     pModule = PyImport_Import(pName);
@@ -224,7 +224,7 @@ static PyObject *myAlert(PyObject *self, PyObject *args)
             NSLog(@"---> mStr: %@", mStr);
             
             //设置函数参数
-            pValue = Py_BuildValue([mStr UTF8String], [args.firstObject UTF8String], [args[1] UTF8String], [args[2] UTF8String]);
+            pValue = Py_BuildValue([mStr UTF8String], [args.firstObject UTF8String], [args[1] UTF8String]);
             PyErr_Print();
             
             //调用函数

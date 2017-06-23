@@ -10,7 +10,7 @@
 #import "OperationManager.h"
 
 //python 需要操作的文件路径
-static NSString *const currentPath = @"/Users/lishuzhi/Desktop";
+static NSString *const currentPath = @"/Users/youzu/Desktop";
 
 @implementation ViewController
 
@@ -31,7 +31,7 @@ static NSString *const currentPath = @"/Users/lishuzhi/Desktop";
 
 - (IBAction)pythonLogButtonClick:(NSButton *)sender
 {
-    [[OperationManager sharedManager] pythonLog:@[@"Hello", @"World", @"!"]];
+    [[OperationManager sharedManager] pythonLog:@[@"en", @"/Users/liujinghuang/Desktop/tem/LocalizedDemo/"]];
 }
 
 - (IBAction)pythonWirteFileButtonClick:(NSButton *)sender
